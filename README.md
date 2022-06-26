@@ -2,20 +2,31 @@
 
 ## Election Audit Overview:
 ### Background:
-A U.S. congressional race was just held in a preceint in Colorado. A Colorado Board of Elections employee named Tom is needing help with creating a vote count report to certify the results. This is normally done in Excel but Tom's manager wants a more automated process using Python.
+A U.S. congressional race was just held in a precinct in Colorado. A Colorado Board of Elections employee named Tom is needing help with creating a vote count report to certify the results. This is normally done in Excel but Tom's manager wants a more automated process using Python.
 
 ### Purpose:
 The purpose of this election audit analysis is to verify the total votes counted, the breakdown by votes by county, and the breakdown by candidate to verify the winner of the election just held. Provided this Python analysis is successful, this process will also be used to audit other elections.
 
 ## Election-Audit Results:
 
-- number of votes cast
-- breakdown of # votes and % of total for each county
-- which county had larges # of votes
-- breakdown of # votes and % of total for each candidate
-- which candidate won, their vote count, and their % of total votes
+- Number of votes cast in this election: **369,711**
+- Breakdown of number of votes and percentage of total votes for each county in precinct:
+    - Jefferson: 38,855 votes (10.5% of total)
+    - Denver: 306,055 votes (82.8% of total)
+    - Arapahoe: 24,801 votes (6.7% of total)
+- Based on results above, Denver county had the largest number of votes.
+- Breakdown of number of votes and percentage of total votes for each candidate received:
+    - Charles Casper Stockham: 85,213 votes (23.0% of total)
+    - Diana DeGette: 272,892 votes (73.8% of total)
+    - Raymon Anthony Doane: 11,606 votes (3.1% of total)
+- Diana DeGette won the election. Her results are shown below:
+    - Vote count: 272,892
+    - Percentage of total votes: 73.8%
 
-Python code:
+The results above have been printed to a text file, but a screenshot of the Python terminal output has been pasted below for confirmation:
+
+![Terminal_Output](https://github.com/bfox87/Election_Analysis/blob/main/analysis/Terminal_Output.PNG)
+
 ```
 # Add our dependencies.
 import csv
@@ -174,23 +185,16 @@ with open(file_to_save, "w") as txt_file:
     # Save the winning candidate's name to the text file
     txt_file.write(winning_candidate_summary)
 ```
-## Pasted from kickstarter to show formatting:
-- Outcomes vs Launch Date Conclusions:
-    1. When all years are looked at together, the best time for a theater kickstarter campaign is late Spring/early Summer. This is the time of year when the likelihood of success is highest. The month of May appeared the most popular month for total theater kickstarters with the number of successful campaigns particularly pronounced. Roughly 2/3 of the total campaigns launched in May were successful.
-    2. It appears to be a bad decision to launch a theater kickstarter in the month of December. The number of successes and failures are roughly even. This makes logical sense as most people are busy with holiday festivities and can be financially strapped based on other gift or donation commitments common during the holidays.
 
-- Outcomes vs Goals Conclusions:
-    1. It is recommended to keep your fundraising goals modest to give your campaign the highest likelihood of success. Close to 3 out of 4 fundraisers with goals under $5,000 are successful.
+## Election Audit Summary
 
-- Dataset Limitations:
-    - Using this dataset in 2022 to analyze outcomes by launch date raises some concerns. There appears to be no theater data beyond the year of 2017. This is five years ago and things may have changed since then. Ideally more recent data would be included.
-    - Addi
+This Python script has resulted in a accurate, efficient audit of this precinct's congressional election results. However, the real benefit will come from its use in future elections. The script can be modified to summarize results in a variety of different ways, as detailed below.
 
-## Election Audit Summary:
+### Potential future uses of this Python script:
 
-### Proposal for use in future elections
-Benefit over excel, why it can be used, at least two examples of can be modified for other elections
+- Different geographical breakdowns:
+    - Depending on the size and type of election, the breakdown of votes by different geographical regions can be achieved. District or precinct level data for state-wide elections. zip codes? 
 
-![VBA_Challenge_2017](https://github.com/bfox87/stock-analysis/blob/main/Resources/VBA_Challenge_2017.PNG)
-
-![VBA_Challenge_2018](https://github.com/bfox87/stock-analysis/blob/main/Resources/VBA_Challenge_2018.PNG)
+- Demographics analysis of voter registration
+- Types of votes used (mail-in ballots, punch cards, direct recording electronic (DRE counting machines)
+- Need to create variables, for loop and then print them
